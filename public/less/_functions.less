@@ -1,0 +1,102 @@
+// Table of Contents
+//  Mixins Function
+//
+// .transition (@transition)
+// .transition-property(@transition)
+// .transition-delay (@transition)
+// .transform(@transform)
+// .box-sizing (@type: border-box)
+// .box-shadow (@string)
+// .border-radius (@radius: 5px)
+// .opacity(@opacity: 0.5)
+// .user-select(@string)
+
+/*#region ----Mixins---- */
+
+.transition (@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -ms-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition;
+}
+
+.transition-property(@transition) {
+    -webkit-transition-property: @transition;
+    -moz-transition-property: @transition;
+    -ms-transition-propert: @transition;
+    -o-transition-property: @transition;
+    transition-property: @transition;
+}
+
+.transition-delay (@transition) {
+    -webkit-transition-delay: @transition;
+    -moz-transition-delay: @transition;
+    -ms-transition-delay: @transition;
+    -o-transition-delay: @transition;
+    transition-delay: @transition;
+}
+
+.transform(@transform) {
+    -ms-transform: @transform;
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    box-sizing: @type;
+}
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow: @string;
+    box-shadow: @string;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.opacity(@opacity: 0.5) {
+    -moz-opacity: @opacity;
+    -khtml-opacity: @opacity;
+    -webkit-opacity: @opacity;
+    opacity: @opacity;
+    @opperc: @opacity * 100;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+    filter: ~"alpha(opacity=@{opperc})";
+}
+
+.user-select(@string) {
+    -webkit-user-select: @string;
+    -khtml-user-select: @string;
+    -moz-user-select: @string;
+    -o-user-select: @string;
+    user-select: @string;
+}
+
+
+.animation-name(@animation) {
+    -moz-animation-name: @animation;
+    -o-animation-name: @animation;
+    -webkit-animation-name: @animation;
+    animation-name: @animation;
+}
+
+.animation-fill-mode(@animation) {
+    -moz-animation-fill-mode: @animation;
+    -o-animation-fill-mode: @animation;
+    -webkit-animation-fill-mode: @animation;
+    animation-fill-mode: @animation;
+}
+
+/*#endregion */

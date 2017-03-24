@@ -1,0 +1,412 @@
+// Table of Contents
+// Theme Settings
+//
+// a. Files Import
+// 1. Master Styling apply to the site
+// 1.1 Row, Columns and width setting
+// 1.2 Alignment
+// 1.3 Typography 
+// 2 Header 
+// 3 Footer 
+// 4 Feed slider 
+
+
+// a. File Import
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Includes Setting Files
+@import "_setting";
+
+/*#region ---- 1. Master Styling apply to the site---- */
+body {
+    font-family: Helvetica Neue, Helvetica, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    background-color: @color-shark;
+}
+
+/* ---- 1.1 Row, Columns and width setting---- */
+.full-width {
+    max-width: 100% !important;
+}
+
+.no-padding{
+    .columns,
+    .column{
+        padding: 0;
+    }
+}
+
+.row {
+    // Responsive styling testing
+    // uncomment these when you need to view the row
+    /*border: 1px solid red;*/
+}
+
+.columns {
+    font-size: 13px;
+    // Responsive styling testing
+    // uncomment these when you need to view the columns
+    /*border: 1px solid blue;*/
+}
+
+
+
+
+/* ---- 1.2 Alignment---- */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.add-top {
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+}
+
+.add-bottom {
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.remove-top {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.remove-bottom {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+
+
+/* --- 1.3 Typography---- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+h1, .h1 {
+    font-size: @h1-font-size;
+    line-height: @h1-line-height;
+    letter-spacing: @h1-letter-spacing;
+}
+
+h2, .h2 {
+    font-size: @h2-font-size;
+    line-height: @h2-line-height;
+    letter-spacing: @h2-letter-spacing;
+}
+
+h3, .h3 {
+    font-size: @h3-font-size;
+    line-height: @h3-line-height;
+    letter-spacing: @h3-letter-spacing;
+}
+
+h4, .h4 {
+    font-size: @h4-font-size;
+    line-height: @h4-line-height;
+    letter-spacing: @h4-letter-spacing;
+}
+
+h5, .h5 {
+    font-size: @h5-font-size;
+    line-height: @h5-line-height;
+    letter-spacing: @h5-letter-spacing;
+}
+
+h6, .h6 {
+    font-size: @h6-font-size;
+    line-height: @h6-line-height;
+    letter-spacing: @h6-letter-spacing;
+}
+
+
+
+/* --- 2 header---- */
+.header{
+    background-color: @color-header-background;
+    min-height: 70px;
+    border-bottom: 1px solid @color-border;
+
+    .logo{
+        display: block;
+        text-align: center;
+
+        img{
+            height: 25px;
+            margin: 24px 0;
+        }
+    }
+}
+
+/* --- 3 footer---- */
+.footer{
+    height: 75px;
+}
+
+
+/* --- 4 feed slider---- */
+.slick-arrow-style(){
+    cursor: pointer;
+
+    &.slick-disabled{
+        opacity: 0.1;
+        cursor: initial;
+    }
+
+    &:before{
+        content: " ";
+        width: 20px;
+        height: 32px;
+        display: block;
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+}
+
+.hero-slider{
+    border-bottom: 2px solid @color-border;
+    position: relative;
+
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -16px;
+        font-size: 0;
+        border: none;
+        background: transparent;
+        z-index: 10;
+
+
+        &.slick-prev{
+            left: 2%;
+
+            .slick-arrow-style();
+
+            &:before{
+                background-image: url('../assets/arrow-left.svg');
+            }
+        }
+
+        &.slick-next{
+            right: 2%;
+
+            .slick-arrow-style();
+
+            &:before{
+                background-image: url('../assets/arrow-right.svg');
+            }
+        }
+    }
+
+    .slick-dots{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        list-style: none;
+        margin: 0;
+
+        li{
+            display: inline-block;
+            margin-right: 10px;
+
+
+            button{
+                font-size: 0;
+                width: 10px;
+                height: 10px;
+                border: 1px solid @color-greyscale2;
+                .border-radius(50%);
+                background-color: @color-greyscale2;
+                padding: 0;
+                outline: 0;
+
+            }
+
+            &.slick-active{
+                button{
+
+                    border: @color-base;
+                    background-color: @color-base;
+
+                }
+            }
+        }
+    }
+
+    .jw-hero-option{
+        width: 960px;
+
+
+        .jw-hero-container{
+            height: 480px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            
+            .play-btn{
+                width: 135px;
+                height: 135px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -62.5px;
+                margin-left: -62.5px;
+                z-index: 2;
+            }
+
+            .jw-hero-metadata-container{
+                position: absolute;
+                bottom: 65px;
+                left: 5%;
+                right: 5%;
+                
+                h2{
+                    font-size: 42px;
+                    color: @color-white;
+                }
+                
+                p{
+                    font-size: 17px;
+                    color: @color-greyscale2;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+}
+
+.feed-slider{
+    border-bottom: 2px solid @color-border;
+    padding-bottom: 20px;
+
+    .jw-feed-container{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+
+    h2{
+        color: @color-white;
+        padding: 0 10px;
+    }
+
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -16px;
+        font-size: 0;
+        border: none;
+        background: transparent;
+
+
+        &.slick-prev{
+            left: -8%;
+
+            .slick-arrow-style();
+
+            &:before{
+                background-image: url('../assets/arrow-left.svg');
+            }
+        }
+
+        &.slick-next{
+            right: -8%;
+
+            .slick-arrow-style();
+
+            &:before{
+                background-image: url('../assets/arrow-right.svg');
+            }
+        }
+    }
+
+    .slick-slide{
+        padding: 0 10px;
+    }
+
+    .jw-option{
+        position: relative;
+        outline: 0;
+
+        .menu-layer{
+            position: absolute;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);;
+            top: 0;
+            left: 10px;
+            right: 10px;
+
+            p{
+                padding: 15px;
+                margin: 0;
+                color: @color-greyscale2;
+            }
+        }
+
+        .jw-thumbnail-container{
+            height: 148px;
+            background-size: cover;
+            background-position: center;
+            background-color: @color-black;
+            position: relative;
+
+            .list-menu{
+                position: absolute;
+                background-image: url('../assets/menu.svg');
+                width: 10px;
+                height: 30px;
+                display: block;
+                top: 10px;
+                right: 10px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+        }
+
+        .jw-metadata-container{
+            /*height: 32px;*/
+            background-color: @color-greyscale7;
+            h3{
+                padding: 5px 10px;
+                margin: 0;
+                color: @color-greyscale2;
+            }
+
+            p{
+                padding: 5px 10px 10px;
+                margin: 0;
+                font-size: 13px;
+                line-height: 18px;
+                display: none;
+                color: @color-greyscale2;
+            }
+        }
+
+        &:hover{
+            color: @color-greyscale2;
+        }
+    }
+
+}
+.player-container{
+    width: 100px; position: absolute; top: -1000px;
+}
